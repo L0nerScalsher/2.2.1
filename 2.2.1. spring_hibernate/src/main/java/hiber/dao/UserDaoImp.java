@@ -32,11 +32,12 @@ public class UserDaoImp implements UserDao {
 
    @Override
    @Transactional(readOnly = true)
-   public User getUserByCar(Car car) {
-      String hql = "SELECT u FROM User u JOIN u.car c WHERE c.id = :carId";
+   public User getUserByCar(String model, String series) {
+      String hql = "SELECT u FROM User u JOIN u.car c WHERE c.model = :model AND c.series = :series";
       Session session = sessionFactory.getCurrentSession();
       Query<User> query = session.createQuery(hql, User.class);
-      query.setParameter("carId", car.getId());
+      query.setParameter("model", model);
+      query.setParameter("series", series);
       return query.uniqueResult();
    }
 

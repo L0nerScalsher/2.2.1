@@ -47,12 +47,12 @@ public class MainApp {
          System.out.println();
       }
 
-      User userWithCar1 = userService.getUserByCar(car1);
-      System.out.println("User with car1: " + userWithCar1.toString());
-      User userWithCar2 = userService.getUserByCar(car2);
-      System.out.println("User with car2: " + userWithCar2.toString());
-      User userWithCar3 = userService.getUserByCar(car3);
-      System.out.println("User with car3: " + userWithCar3.toString());
+      User userWithM1S1 = userService.getUserByCar("model1", "series1");
+      System.out.println("User with model1, series1: " + userWithM1S1.toString());
+      User userWithM2S2 = userService.getUserByCar("model2", "series2");
+      System.out.println("User with model2, series2: " + userWithM2S2.toString());
+      User userWithM3S3 = userService.getUserByCar("model3", "series3");
+      System.out.println("User with model3, series3: " + userWithM3S3.toString());
 
       context.close();
    }
